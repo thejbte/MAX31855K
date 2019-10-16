@@ -42,22 +42,26 @@ int16_t PasarDato32_bits_MAX31855_ReadIntTemp(uint32_t Data){
     return  MAX31855_ReadIntTemp(&Max31855_Temp_Data);   
 }
 /*Wrapper Test assert unity   0xF060c900 = -250 y -55    0x40,0x19,0x58,0x02  02581940*/
-void test_lala(void){
-
- TEST_ASSERT_EQUAL(25,MAX31855_ReadExtTemp(&Max31855_Temp_Data));  /*MAX31855_ReadExtTemp(&Max31855_Temp_Data));*/
+void test_ReadExternalTemperature(void){
+    TEST_ASSERT_EQUAL(36,PasarDato32_bits_MAX31855_ReadExtTemp(0x02501940));
+    /*TEST_ASSERT_EQUAL(25,MAX31855_ReadExtTemp(&Max31855_Temp_Data));  */
 }
-
+void test_ReadinternalTemperature(void){
+    TEST_ASSERT_EQUAL(25,PasarDato32_bits_MAX31855_ReadIntTemp(0x02501940));
+    /*TEST_ASSERT_EQUAL(25,MAX31855_ReadExtTemp(&Max31855_Temp_Data));  */
+}
 int main(int argc, char** argv){
 
 MAX31855_Init(&Max31855_Temp_Data,Wrapper_Exchange8Bits, Wrapper_Pin_cs);
 
 
 /*printf("Temperature  %d %d",MAX31855_ReadExtTemp(&Max31855_Temp_Data),MAX31855_ReadIntTemp(&Max31855_Temp_Data));*/
-printf("Temp %d %d",PasarDato32_bits_MAX31855_ReadExtTemp(0x02501940),PasarDato32_bits_MAX31855_ReadIntTemp(0x02501940));
+/*printf("Temp %d %d",PasarDato32_bits_MAX31855_ReadExtTemp(0x02501940),PasarDato32_bits_MAX31855_ReadIntTemp(0x02501940));*/
 
-/*UNITY_BEGIN();*/
-/*RUN_TEST(test_lala);*/
-/*UNITY_END();*/
+UNITY_BEGIN();
+RUN_TEST(test_ReadExternalTemperature);
+RUN_TEST(test_ReadinternalTemperature);
+UNITY_END();
 return 0;
 
 }
