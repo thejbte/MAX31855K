@@ -51,9 +51,9 @@ int16_t MAX31855_ReadExtTemp(Max31855_Data_t *obj){
     /* Bits D[31:18] are the signed 14-bit thermocouple temperature value*/
   if (obj->TempDataRegFull & ((uint32_t)1 << 31)) { /* Sign extend negative numbers*/
       value = ((obj->TempDataRegFull >> 18) & 0x3FFF); 
-      value = ( (~ (value ) & 0x3fff ) + 0x01 ) / (-4);     /*Complemento a 2*/ 
+      value = ( (~ (value ) & 0x3fff ) + 0x01 ) / (-4);     /*Complemento a 2, niego y sumo 1*/ 
   } else {
-      value = (obj->TempDataRegFull & 0x3fff) >> 18; /* Shift off all but the temperature data*/
+      value = (obj->TempDataRegFull >> 18)  & 0x3fff; /* Shift off all but the temperature data*/
       value /= 4 ;
     }
   
@@ -75,8 +75,8 @@ int16_t MAX31855_ReadIntTemp(Max31855_Data_t *obj){
       value = ((obj->TempDataRegFull >> 4) & 0xFFF); 
       value = ( (~ (value ) & 0xfff ) + 0x01 ) / (-16);     /*Complemento a 2   - 2^-4*/ 
   } else {
-      value = (obj->TempDataRegFull & 0xfff) >> 4; /* Shift off all but the temperature data*/
-      value /= 4 ;
+      value = (obj->TempDataRegFull >> 4) & 0xfff; /* Shift off all but the temperature data*/
+      value /= 16 ;
     }
   
   return (value); /*Data>>2*/

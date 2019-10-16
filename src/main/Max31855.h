@@ -6,6 +6,7 @@
 #define MAX31855_TRUE 1u
 #define MAX31855_FALSE 0u
 #define MAX_NUM_BYTES_EXCHANGE 4   /*Register 32 bits*/
+#define VERSION     "1.0.1"
 
 /*@brief : pointer to function for read 8 bits of shif register Spi*/
 typedef uint8_t (*SPI_ExchangeByte_t)(uint8_t);
