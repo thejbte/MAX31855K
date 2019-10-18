@@ -1,0 +1,191 @@
+
+# 1 "Max31855.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 25 "Max31855.h"
+typedef uint8_t (*SPI_ExchangeByte_t)(uint8_t);
+
+
+typedef void (*SPI_CS_SS_t)(uint8_t);
+
+
+typedef struct {
+union{
+uint32_t TempDataRegFull;
+struct {
+unsigned Fault_OC :1;
+unsigned Fault_SCG :1;
+unsigned Fault_SCV :1;
+unsigned Reserved_1 :1;
+unsigned TempInt_Raw :8;
+unsigned Fault :1;
+unsigned Reserved_2 :1;
+unsigned TempExt_Raw :8;
+};
+
+};
+SPI_ExchangeByte_t SPI_RW_Byte;
+SPI_CS_SS_t SPI_CS_SS;
+}Max31855_Data_t;
+
+# 60
+void MAX31855_Init(Max31855_Data_t *obj, SPI_ExchangeByte_t SPI_TransferByte, SPI_CS_SS_t SPI_cs_ss);
+
+# 66
+void MAX31855_ReadData(Max31855_Data_t *obj);
+
+# 73
+int16_t MAX31855_ReadExtTemp(Max31855_Data_t *obj);
+
+# 81
+int16_t MAX31855_ReadIntTemp(Max31855_Data_t *obj);
+
+# 23 "Max31855.c"
+void MAX31855_Init(Max31855_Data_t *obj, SPI_ExchangeByte_t SPI_TransferByte, SPI_CS_SS_t SPI_cs_ss){
+obj->SPI_RW_Byte = SPI_TransferByte;
+obj->SPI_CS_SS = SPI_cs_ss;
+}
+
+# 34
+void MAX31855_ReadData(Max31855_Data_t *obj){
+uint8_t DataW = 0xff;
+uint8_t spival[4];
+int8_t i;
+
+obj->TempDataRegFull =0x0000;
+
+obj->SPI_CS_SS(0u);
+
+
+for(i = 4 - 1 ; i >= 0 ; i--){
+spival[i] = obj->SPI_RW_Byte(DataW);
+}
+
+obj->SPI_CS_SS(1u);
+obj->TempDataRegFull = *((uint32_t*)&spival[0]);
+}
+
+# 57
+int16_t MAX31855_ReadExtTemp(Max31855_Data_t *obj){
+int16_t value;
+
+MAX31855_ReadData(obj);
+
+
+if (obj->TempDataRegFull & ((uint32_t)1 << 31)) {
+value = ((obj->TempDataRegFull >> 18) & 0x3FFF);
+value = ( (~ (value ) & 0x3fff ) + 0x01 ) / (-4);
+} else {
+value = (obj->TempDataRegFull >> 18) & 0x3fff;
+value /= 4 ;
+}
+
+return (value);
+}
+
+# 79
+int16_t MAX31855_ReadIntTemp(Max31855_Data_t *obj){
+int16_t value;
+
+MAX31855_ReadData(obj);
+
+
+if (obj->TempDataRegFull & ((uint32_t)1 << 15)) {
+value = ((obj->TempDataRegFull >> 4) & 0xFFF);
+value = ( (~ (value ) & 0xfff ) + 0x01 ) / (-16);
+} else {
+value = (obj->TempDataRegFull >> 4) & 0xfff;
+value /= 16 ;
+}
+
+return (value);
+}

@@ -1,0 +1,229 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"34 Max31855.h
+[s S3 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :8 `uc 1 :1 `uc 1 :1 `uc 1 :8 `uc 1 ]
+[n S3 . Fault_OC Fault_SCG Fault_SCV Reserved_1 TempInt_Raw Fault Reserved_2 TempExt_Raw ]
+"32
+[u S2 `ul 1 `S3 1 ]
+[n S2 . TempDataRegFull . ]
+[v F30 `(uc ~T0 @X0 0 tf1`uc ]
+[v F33 `(v ~T0 @X0 0 tf1`uc ]
+"31
+[s S1 `S2 1 `*F30 1 `*F33 1 ]
+[n S1 . . SPI_RW_Byte SPI_CS_SS ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;Max31855.h: 25: typedef uint8_t (*SPI_ExchangeByte_t)(uint8_t);
+[; ;Max31855.h: 28: typedef void (*SPI_CS_SS_t)(uint8_t);
+[; ;Max31855.h: 31: typedef struct {
+[; ;Max31855.h: 32: union{
+[; ;Max31855.h: 33: uint32_t TempDataRegFull;
+[; ;Max31855.h: 34: struct {
+[; ;Max31855.h: 35: unsigned Fault_OC :1;
+[; ;Max31855.h: 36: unsigned Fault_SCG :1;
+[; ;Max31855.h: 37: unsigned Fault_SCV :1;
+[; ;Max31855.h: 38: unsigned Reserved_1 :1;
+[; ;Max31855.h: 39: unsigned TempInt_Raw :8;
+[; ;Max31855.h: 40: unsigned Fault :1;
+[; ;Max31855.h: 41: unsigned Reserved_2 :1;
+[; ;Max31855.h: 42: unsigned TempExt_Raw :8;
+[; ;Max31855.h: 43: };
+[; ;Max31855.h: 45: };
+[; ;Max31855.h: 46: SPI_ExchangeByte_t SPI_RW_Byte;
+[; ;Max31855.h: 47: SPI_CS_SS_t SPI_CS_SS;
+[; ;Max31855.h: 48: }Max31855_Data_t;
+[; ;Max31855.h: 60: void MAX31855_Init(Max31855_Data_t *obj, SPI_ExchangeByte_t SPI_TransferByte, SPI_CS_SS_t SPI_cs_ss);
+[; ;Max31855.h: 66: void MAX31855_ReadData(Max31855_Data_t *obj);
+[; ;Max31855.h: 73: int16_t MAX31855_ReadExtTemp(Max31855_Data_t *obj);
+[; ;Max31855.h: 81: int16_t MAX31855_ReadIntTemp(Max31855_Data_t *obj);
+"23 Max31855.c
+[v _MAX31855_Init `(v ~T0 @X0 1 ef3`*S1`*F30`*F33 ]
+{
+[; ;Max31855.c: 23: void MAX31855_Init(Max31855_Data_t *obj, SPI_ExchangeByte_t SPI_TransferByte, SPI_CS_SS_t SPI_cs_ss){
+[e :U _MAX31855_Init ]
+[v _obj `*S1 ~T0 @X0 1 r1 ]
+[v _SPI_TransferByte `*F30 ~T0 @X0 1 r2 ]
+[v _SPI_cs_ss `*F33 ~T0 @X0 1 r3 ]
+[f ]
+[; ;Max31855.c: 24: obj->SPI_RW_Byte = SPI_TransferByte;
+"24
+[e = . *U _obj 1 _SPI_TransferByte ]
+[; ;Max31855.c: 25: obj->SPI_CS_SS = SPI_cs_ss;
+"25
+[e = . *U _obj 2 _SPI_cs_ss ]
+[; ;Max31855.c: 26: }
+"26
+[e :UE 4 ]
+}
+"34
+[v _MAX31855_ReadData `(v ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;Max31855.c: 34: void MAX31855_ReadData(Max31855_Data_t *obj){
+[e :U _MAX31855_ReadData ]
+[v _obj `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"35
+[v _DataW `uc ~T0 @X0 1 a ]
+[; ;Max31855.c: 35: uint8_t DataW = 0xff;
+[e = _DataW -> -> 255 `i `uc ]
+"36
+[v _spival `uc ~T0 @X0 -> 4 `i a ]
+"37
+[v _i `c ~T0 @X0 1 a ]
+[; ;Max31855.c: 36: uint8_t spival[4];
+[; ;Max31855.c: 37: int8_t i;
+[; ;Max31855.c: 39: obj->TempDataRegFull =0x0000;
+"39
+[e = . . *U _obj 0 0 -> -> -> 0 `i `l `ul ]
+[; ;Max31855.c: 41: obj->SPI_CS_SS(0u);
+"41
+[e ( *U . *U _obj 2 (1 -> -> 0 `ui `uc ]
+[; ;Max31855.c: 44: for(i = 4 - 1 ; i >= 0 ; i--){
+"44
+{
+[e = _i -> - -> 4 `i -> 1 `i `c ]
+[e $ >= -> _i `i -> 0 `i 6  ]
+[e $U 7  ]
+[e :U 6 ]
+{
+[; ;Max31855.c: 45: spival[i] = obj->SPI_RW_Byte(DataW);
+"45
+[e = *U + &U _spival * -> -> _i `uc `ux -> -> # *U &U _spival `ui `ux ( *U . *U _obj 1 (1 _DataW ]
+"46
+}
+"44
+[e -- _i -> -> 1 `i `c ]
+[e $ >= -> _i `i -> 0 `i 6  ]
+[e :U 7 ]
+"46
+}
+[; ;Max31855.c: 46: }
+[; ;Max31855.c: 48: obj->SPI_CS_SS(1u);
+"48
+[e ( *U . *U _obj 2 (1 -> -> 1 `ui `uc ]
+[; ;Max31855.c: 49: obj->TempDataRegFull = *((uint32_t*)&spival[0]);
+"49
+[e = . . *U _obj 0 0 *U -> &U *U + &U _spival * -> -> -> 0 `i `ui `ux -> -> # *U &U _spival `ui `ux `*ul ]
+[; ;Max31855.c: 50: }
+"50
+[e :UE 5 ]
+}
+"57
+[v _MAX31855_ReadExtTemp `(i ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;Max31855.c: 57: int16_t MAX31855_ReadExtTemp(Max31855_Data_t *obj){
+[e :U _MAX31855_ReadExtTemp ]
+[v _obj `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"58
+[v _value `i ~T0 @X0 1 a ]
+[; ;Max31855.c: 58: int16_t value;
+[; ;Max31855.c: 60: MAX31855_ReadData(obj);
+"60
+[e ( _MAX31855_ReadData (1 _obj ]
+[; ;Max31855.c: 63: if (obj->TempDataRegFull & ((uint32_t)1 << 31)) {
+"63
+[e $ ! != & . . *U _obj 0 0 << -> -> 1 `i `ul -> 31 `i -> -> 0 `i `ul 10  ]
+{
+[; ;Max31855.c: 64: value = ((obj->TempDataRegFull >> 18) & 0x3FFF);
+"64
+[e = _value -> & >> . . *U _obj 0 0 -> 18 `i -> -> -> 16383 `i `l `ul `i ]
+[; ;Max31855.c: 65: value = ( (~ (value ) & 0x3fff ) + 0x01 ) / (-4);
+"65
+[e = _value / + & ~ _value -> 16383 `i -> 1 `i -U -> 4 `i ]
+"66
+}
+[; ;Max31855.c: 66: } else {
+[e $U 11  ]
+[e :U 10 ]
+{
+[; ;Max31855.c: 67: value = (obj->TempDataRegFull >> 18) & 0x3fff;
+"67
+[e = _value -> & >> . . *U _obj 0 0 -> 18 `i -> -> -> 16383 `i `l `ul `i ]
+[; ;Max31855.c: 68: value /= 4 ;
+"68
+[e =/ _value -> -> 4 `uc `i ]
+"69
+}
+[e :U 11 ]
+[; ;Max31855.c: 69: }
+[; ;Max31855.c: 71: return (value);
+"71
+[e ) _value ]
+[e $UE 9  ]
+[; ;Max31855.c: 72: }
+"72
+[e :UE 9 ]
+}
+"79
+[v _MAX31855_ReadIntTemp `(i ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;Max31855.c: 79: int16_t MAX31855_ReadIntTemp(Max31855_Data_t *obj){
+[e :U _MAX31855_ReadIntTemp ]
+[v _obj `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"80
+[v _value `i ~T0 @X0 1 a ]
+[; ;Max31855.c: 80: int16_t value;
+[; ;Max31855.c: 82: MAX31855_ReadData(obj);
+"82
+[e ( _MAX31855_ReadData (1 _obj ]
+[; ;Max31855.c: 85: if (obj->TempDataRegFull & ((uint32_t)1 << 15)) {
+"85
+[e $ ! != & . . *U _obj 0 0 << -> -> 1 `i `ul -> 15 `i -> -> 0 `i `ul 13  ]
+{
+[; ;Max31855.c: 86: value = ((obj->TempDataRegFull >> 4) & 0xFFF);
+"86
+[e = _value -> & >> . . *U _obj 0 0 -> 4 `i -> -> -> 4095 `i `l `ul `i ]
+[; ;Max31855.c: 87: value = ( (~ (value ) & 0xfff ) + 0x01 ) / (-16);
+"87
+[e = _value / + & ~ _value -> 4095 `i -> 1 `i -U -> 16 `i ]
+"88
+}
+[; ;Max31855.c: 88: } else {
+[e $U 14  ]
+[e :U 13 ]
+{
+[; ;Max31855.c: 89: value = (obj->TempDataRegFull >> 4) & 0xfff;
+"89
+[e = _value -> & >> . . *U _obj 0 0 -> 4 `i -> -> -> 4095 `i `l `ul `i ]
+[; ;Max31855.c: 90: value /= 16 ;
+"90
+[e =/ _value -> -> 16 `uc `i ]
+"91
+}
+[e :U 14 ]
+[; ;Max31855.c: 91: }
+[; ;Max31855.c: 93: return (value);
+"93
+[e ) _value ]
+[e $UE 12  ]
+[; ;Max31855.c: 94: }
+"94
+[e :UE 12 ]
+}

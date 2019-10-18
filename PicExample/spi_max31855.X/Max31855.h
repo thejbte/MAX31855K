@@ -36,10 +36,10 @@ typedef struct {
            unsigned Fault_SCG       :1; /*!< This bit is a 1 when the thermocouple is short-circuited to GND. Default value is 0.*/
            unsigned Fault_SCV       :1; /*!< This bit is a 1 when the thermocouple is short-circuited to VCC. Default value is 0.*/
            unsigned Reserved_1      :1; /*!< This bit always reads 0.*/
-           unsigned TempInt_Raw     :12;/*!< These bits contain the signed 12-bit value of the reference junction temperature*/
+           unsigned TempInt_Raw     :8;/*!< 12 These bits contain the signed 12-bit value of the reference junction temperature*/
            unsigned Fault           :1; /*!< This bit reads at 1 when any of the SCV, SCG, or OC faults are active. Default values 0*/
            unsigned Reserved_2      :1; /*!< This bit always reads 0.*/
-           unsigned TempExt_Raw     :14;/*!< These bits contain the signed 14-bit thermocouple temperature value*/
+           unsigned TempExt_Raw     :8;/*!< 14These bits contain the signed 14-bit thermocouple temperature value*/
         };
         
     };

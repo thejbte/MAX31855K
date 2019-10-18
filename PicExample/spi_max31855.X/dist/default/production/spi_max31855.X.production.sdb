@@ -1,0 +1,479 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1937 ]
+[d frameptr 6 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"57 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\main.c
+[v _wrapperpin wrapperpin `(v  1 e 1 0 ]
+"64
+[v _main main `(v  1 e 1 0 ]
+"23 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\Max31855.c
+[v _MAX31855_Init MAX31855_Init `(v  1 e 1 0 ]
+"34
+[v _MAX31855_ReadData MAX31855_ReadData `(v  1 e 1 0 ]
+"57
+[v _MAX31855_ReadExtTemp MAX31855_ReadExtTemp `(i  1 e 2 0 ]
+"66 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"146
+[v _putch putch `(v  1 e 1 0 ]
+"153
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"155
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"163
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"166
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"170
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"174
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"50 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"60
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"65 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+"79
+[v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
+[s S450 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"730 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f1937.h
+[u S459 . 1 `S450 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES459  1 e 1 @17 ]
+"1305
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1367
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1429
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1491
+[v _TRISD TRISD `VEuc  1 e 1 @143 ]
+"1553
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+[s S243 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1779
+[s S252 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S257 . 1 `S243 1 . 1 0 `S252 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES257  1 e 1 @149 ]
+"1890
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1949
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2007
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2349
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2411
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2473
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+[s S94 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2490
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _LATCbits LATCbits `VES103  1 e 1 @270 ]
+"2535
+[v _LATD LATD `VEuc  1 e 1 @271 ]
+"2605
+[v _LATE LATE `VEuc  1 e 1 @272 ]
+"2915
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3264
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3320
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3378
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3436
+[v _ANSELD ANSELD `VEuc  1 e 1 @399 ]
+"3506
+[v _ANSELE ANSELE `VEuc  1 e 1 @400 ]
+"3740
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3760
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3796
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3846
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3879
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S492 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3896
+[u S501 . 1 `S492 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES501  1 e 1 @413 ]
+"3941
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S471 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3958
+[u S480 . 1 `S471 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES480  1 e 1 @414 ]
+"4003
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"4055
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4125
+[v _WPUE WPUE `VEuc  1 e 1 @528 ]
+"4146
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"4166
+[v _SSPADD SSPADD `VEuc  1 e 1 @530 ]
+"4206
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
+[s S44 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"4223
+[u S53 . 1 `S44 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES53  1 e 1 @532 ]
+"4268
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
+[s S22 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4290
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES31  1 e 1 @533 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"362
+[v _hexpowers hexpowers `DC[4]ui  1 s 8 hexpowers ]
+[s S115 . 4 `uc 1 Fault_OC 1 0 :1:0 
+`uc 1 Fault_SCG 1 0 :1:1 
+`uc 1 Fault_SCV 1 0 :1:2 
+`uc 1 Reserved_1 1 0 :1:3 
+`uc 1 TempInt_Raw 1 1 :8:0 
+`uc 1 Fault 1 2 :1:0 
+`uc 1 Reserved_2 1 2 :1:1 
+`uc 1 TempExt_Raw 1 3 :8:0 
+]
+"61 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\main.c
+[u S124 . 4 `ul 1 TempDataRegFull 4 0 `S115 1 . 4 0 ]
+[s S129 . 8 `S124 1 . 4 0 `*.37(uc 1 SPI_RW_Byte 2 4 `*.37(v 1 SPI_CS_SS 2 6 ]
+[v _Max31855_Data Max31855_Data `S129  1 e 8 0 ]
+[s S404 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/eusart.c
+[u S409 . 1 `S404 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES409  1 e 1 0 ]
+"58
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"64 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"103
+} 0
+"464 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"1500
+[v printf@idx idx `uc  1 a 1 17 ]
+"501
+[v printf@width width `i  1 a 2 23 ]
+"528
+[v printf@val val `ui  1 a 2 20 ]
+"499
+[v printf@c c `c  1 a 1 25 ]
+"508
+[v printf@flag flag `uc  1 a 1 22 ]
+"506
+[v printf@prec prec `c  1 a 1 19 ]
+"466
+[v printf@ap ap `[1]*.4v  1 a 1 18 ]
+"464
+[v printf@f f `*.25DCuc  1 p 2 7 ]
+"1541
+} 0
+"146 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"148
+[v putch@txData txData `uc  1 a 1 1 ]
+"149
+} 0
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 1 ]
+"15
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"26
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"31
+} 0
+"50 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"65 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"55 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"101
+} 0
+"60 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"68
+} 0
+"66 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"170
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"172
+} 0
+"166
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"168
+} 0
+"174
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"176
+} 0
+"57 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\Max31855.c
+[v _MAX31855_ReadExtTemp MAX31855_ReadExtTemp `(i  1 e 2 0 ]
+{
+[s S115 . 4 `uc 1 Fault_OC 1 0 :1:0 
+`uc 1 Fault_SCG 1 0 :1:1 
+`uc 1 Fault_SCV 1 0 :1:2 
+`uc 1 Reserved_1 1 0 :1:3 
+`uc 1 TempInt_Raw 1 1 :8:0 
+`uc 1 Fault 1 2 :1:0 
+`uc 1 Reserved_2 1 2 :1:1 
+`uc 1 TempExt_Raw 1 3 :8:0 
+]
+[u S124 . 4 `ul 1 TempDataRegFull 4 0 `S115 1 . 4 0 ]
+[s S129 . 8 `S124 1 . 4 0 `*.37(uc 1 SPI_RW_Byte 2 4 `*.37(v 1 SPI_CS_SS 2 6 ]
+[v MAX31855_ReadExtTemp@obj obj `*.4S129  1 a 1 wreg ]
+"58
+[v MAX31855_ReadExtTemp@value value `i  1 a 2 4 ]
+"57
+[v MAX31855_ReadExtTemp@obj obj `*.4S129  1 a 1 wreg ]
+"60
+"57
+[v MAX31855_ReadExtTemp@obj obj `*.4S129  1 a 1 6 ]
+"72
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
+} 0
+"34 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\Max31855.c
+[v _MAX31855_ReadData MAX31855_ReadData `(v  1 e 1 0 ]
+{
+[s S115 . 4 `uc 1 Fault_OC 1 0 :1:0 
+`uc 1 Fault_SCG 1 0 :1:1 
+`uc 1 Fault_SCV 1 0 :1:2 
+`uc 1 Reserved_1 1 0 :1:3 
+`uc 1 TempInt_Raw 1 1 :8:0 
+`uc 1 Fault 1 2 :1:0 
+`uc 1 Reserved_2 1 2 :1:1 
+`uc 1 TempExt_Raw 1 3 :8:0 
+]
+[u S124 . 4 `ul 1 TempDataRegFull 4 0 `S115 1 . 4 0 ]
+[s S129 . 8 `S124 1 . 4 0 `*.37(uc 1 SPI_RW_Byte 2 4 `*.37(v 1 SPI_CS_SS 2 6 ]
+[v MAX31855_ReadData@obj obj `*.4S129  1 a 1 wreg ]
+"36
+[v MAX31855_ReadData@spival spival `[4]uc  1 a 4 5 ]
+"37
+[v MAX31855_ReadData@i i `c  1 a 1 10 ]
+"35
+[v MAX31855_ReadData@DataW DataW `uc  1 a 1 9 ]
+"34
+[v MAX31855_ReadData@obj obj `*.4S129  1 a 1 wreg ]
+[v MAX31855_ReadData@obj obj `*.4S129  1 a 1 11 ]
+"50
+} 0
+"57 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\main.c
+[v _wrapperpin wrapperpin `(v  1 e 1 0 ]
+{
+[v wrapperpin@pin pin `uc  1 p 1 0 ]
+"60
+} 0
+"79 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\mcc_generated_files/spi.c
+[v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
+{
+[v SPI_Exchange8bit@data data `uc  1 p 1 0 ]
+"91
+} 0
+"23 C:\Users\ingeniero04\MPLABXProjects\spi_max31855.X\Max31855.c
+[v _MAX31855_Init MAX31855_Init `(v  1 e 1 0 ]
+{
+[s S115 . 4 `uc 1 Fault_OC 1 0 :1:0 
+`uc 1 Fault_SCG 1 0 :1:1 
+`uc 1 Fault_SCV 1 0 :1:2 
+`uc 1 Reserved_1 1 0 :1:3 
+`uc 1 TempInt_Raw 1 1 :8:0 
+`uc 1 Fault 1 2 :1:0 
+`uc 1 Reserved_2 1 2 :1:1 
+`uc 1 TempExt_Raw 1 3 :8:0 
+]
+[u S124 . 4 `ul 1 TempDataRegFull 4 0 `S115 1 . 4 0 ]
+[s S129 . 8 `S124 1 . 4 0 `*.37(uc 1 SPI_RW_Byte 2 4 `*.37(v 1 SPI_CS_SS 2 6 ]
+[v MAX31855_Init@obj obj `*.4S129  1 a 1 wreg ]
+[v MAX31855_Init@obj obj `*.4S129  1 a 1 wreg ]
+[v MAX31855_Init@SPI_TransferByte SPI_TransferByte `*.37(uc  1 p 2 0 ]
+[v MAX31855_Init@SPI_cs_ss SPI_cs_ss `*.37(v  1 p 2 2 ]
+[v MAX31855_Init@obj obj `*.4S129  1 a 1 4 ]
+"26
+} 0
